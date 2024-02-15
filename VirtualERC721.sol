@@ -60,6 +60,7 @@ contract VirtualERC721 is Ownable {
         _name = name_;
         _symbol = symbol_;
         _baseURI = baseURI_;
+        operators[msg.sender] = true; // owner is an operator
     }
 
     modifier onlyOperator() {
