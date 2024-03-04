@@ -1174,6 +1174,11 @@ contract SmartToken is Context, IBEP20, Ownable {
     return true;
   }
   
+  function burn(uint256 amount) external returns(bool) {
+    _burn(msg.sender, amount);
+    return true;
+  }
+
    // to receive bnb/eth from pool
   receive() external payable {}
 }
